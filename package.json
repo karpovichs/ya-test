@@ -1,0 +1,46 @@
+{
+  "name": "ya-test",
+  "version": "1.0.0",
+  "description": "test task for landing developer",
+  "scripts": {
+    "editorconfig": "editorconfig-cli",
+    "stylelint": "stylelint \"source/sass/blocks/**/*.scss\"",
+    "eslint": "eslint '**/*.js'",
+    "test": "npm run editorconfig && npm run stylelint && npm run eslint",
+    "build": "cross-env NODE_ENV=production gulp build",
+    "start": "gulp start"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/preset-env": "^7.24.4",
+    "@babel/register": "^7.23.7",
+    "@htmlacademy/editorconfig-cli": "^3.0.0",
+    "autoprefixer": "^10.4.19",
+    "babel-loader": "^9.1.3",
+    "browser-sync": "^3.0.2",
+    "cross-env": "^7.0.3",
+    "del": "^3.0.0",
+    "eslint": "^8.12.0",
+    "gulp": "^5.0.0",
+    "gulp-csso": "^4.0.1",
+    "gulp-plumber": "^1.2.1",
+    "gulp-postcss": "^10.0.0",
+    "gulp-pug": "^5.0.0",
+    "gulp-sass": "^5.1.0",
+    "sass": "^1.75.0",
+    "stylelint": "^16.3.1",
+    "webpack": "^5.91.0",
+    "webpack-stream": "^7.0.0"
+  },
+  "browserslist": [
+    "last 2 versions"
+  ],
+  "editorconfig-cli": [
+    "*.json",
+    "*.js",
+    "source/*.html",
+    "source/js/**/*.js",
+    "source/sass/**/*.{sass,scss}"
+  ]
+}

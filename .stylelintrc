@@ -1,0 +1,10 @@
+{
+  "rules": {
+    "declaration-no-important": true,
+    "max-nesting-depth": [4, {"ignoreAtRules": ["media", "include"], "ignore":  ["pseudo-classes"]}],
+    "rule-empty-line-before": ["always", {
+      "except": ["after-single-line-comment", "first-nested"],
+      "ignore": ["after-comment"]
+    }]
+  }
+}
