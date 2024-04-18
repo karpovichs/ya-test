@@ -1,0 +1,107 @@
+.hero {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: $color-beige;
+}
+
+.hero__circle {
+    position: absolute;
+    top: -44px;
+    left: calc(50vw - 10px);
+    animation: rotate 20s linear infinite;
+}
+
+.hero__chess {
+    position: absolute;
+    left: calc(50vw - 50%);
+    width: 1625px;
+    bottom: 0;
+
+    img {
+        display: block;
+        width: 100%;
+    }
+}
+
+.hero__wrap {
+    position: relative;
+    z-index: 1;
+    width: 1222px;
+    margin: 0 auto;
+
+    @include mobile {
+        width: calc(100vw - 40px);
+    }
+}
+.hero__logo {
+    width: 245px;
+    height: 36px;
+    margin: 26px 0 62px;
+    background-color: $color-text;
+}
+
+.hero__text {
+    width: 542px;
+
+    @include mobile {
+        width: 100%;
+    }
+}
+
+.hero__title {
+    margin: 0 0 24px;
+    font-family: $font-merriweather;
+    font-weight: 400;
+    font-size: 60px;
+    line-height: 1.1;
+    text-transform: uppercase;
+
+    @include mobile {
+        font-size: 36px;
+    }
+}
+
+.hero__title-item {
+    display: block;
+
+    &--center {
+        text-align: center;
+    }
+
+    &--right {
+        text-align: right;
+    }
+}
+
+.hero__subtext {
+    margin: 0 0 40px;
+    text-align: center;
+}
+
+.hero__buttons {
+    display: flex;
+    gap: 16px;
+
+    @include mobile {
+        flex-direction: column;
+    }
+}
+
+.hero__marquee {
+    position: relative;
+    z-index: 1;
+    margin-top: auto;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}

@@ -1,1 +1,16 @@
+// General
+@import "general/fonts";
+@import "general/variables";
+@import "general/mixins";
+@import "general/custom-reset";
+@import "general/visually-hidden";
+
+// Blocks
 @import "./blocks/test.scss";
+@import "./blocks/btn.scss";
+@import "./blocks/marquee.scss";
+@import "./blocks/hero.scss";
+@import "./blocks/event.scss";
+@import "./blocks/members.scss";
+@import "./blocks/member.scss";
+@import "./blocks/footer.scss";

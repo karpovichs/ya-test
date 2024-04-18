@@ -1,0 +1,37 @@
+.btn {
+    @include button-reset;
+    @include transition(color, background-color);
+    
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    width: 263px;
+    padding: 12px 49px;
+    // возможно стоит поменять 12 на 20
+
+    color: $color-white;
+    background-color: $color-black;
+    border: none;
+    border-radius: 66px;
+    font-size: 16px;
+    line-height: 1.3;
+    font-weight: 600;
+    text-decoration: none;
+    text-align: center;
+
+    &:hover {
+        color: $color-black;
+        background-color: $color-yellow;
+    }
+
+    &--bordered {
+        color: $color-black;
+        border: 2px solid $color-black;
+        background: none;
+
+        &:hover {
+            color: $color-white;
+            background-color: $color-black;
+        }
+    }
+}

@@ -1,0 +1,83 @@
+html {
+  position: relative;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  font-family: $font-golos;
+  font-weight: 400;
+  color: $color-text;
+  font-size: 20px;
+  line-height: 1.2;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+}
+
+ul[class],
+ol[class] {
+  padding: 0;
+  list-style: none;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+a[class] {
+  text-decoration: none;
+}
+
+.js-focus-visible *:focus:not(.focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+*:focus {
+  outline: none;
+//   box-shadow: 0 0 4px 3px rgba($color-brand-blue, .5);
+
+//   @include tablet {
+//     box-shadow: none;
+//   }
+}
+
+.layout.locked {
+  overflow: hidden;
+}

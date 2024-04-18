@@ -1,0 +1,12 @@
+mixin member(options)
+    - let {name, text, img, className} = options
+    - className = className ? className + ' member' : 'member'
+    - name = name ? name : 'участник'
+    - text = text ? text : 'Чемпион мира по шахматам'
+    - img = img ? img : './img/member.jpg'
+    
+    div(class = className)
+        img(width=320 height=320 src=img).member__img
+        p.member__name= name
+        p.member__info= text
+        .member__btn

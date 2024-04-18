@@ -1,0 +1,29 @@
+.member {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 394px;
+
+    @include mobile {
+        width: calc(100% - 40px);
+    }
+}
+
+.member__img {
+    width: 320px;
+    height: 320px;
+    margin-bottom: 20px;
+    border-radius: 50%;
+}
+
+.member__name {
+    margin-bottom: 6px;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.member__info {
+    margin-bottom: 20px;
+    opacity: .6;
+}

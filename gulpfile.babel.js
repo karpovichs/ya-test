@@ -32,9 +32,7 @@ gulp.task('copy', () => gulp.src([
 
 gulp.task('css', () => gulp.src('source/sass/style.scss')
     .pipe(plumber())
-    .pipe(sass({
-      // includePaths: ['./node_modules', normalize.includePaths],
-    }))
+    .pipe(sass().on('error', sass.logError))
     .pipe(postcss([
       autoprefixer(),
     ]))
@@ -58,7 +56,7 @@ gulp.task('server', () => {
     gulp.watch('source/**/*.pug', gulp.series('pug', 'refresh'))
     gulp.watch('source/img/**/*', gulp.series('copy', 'pug', 'refresh'))
     gulp.watch('source/js/**/*', gulp.series('js', 'refresh'))
-    gulp.watch('source/sass/**/*.{scss,sass}', gulp.series('css'))
+    gulp.watch('source/sass/**/*', gulp.series('css'))
   })
 
 gulp.task('refresh', (done) => {

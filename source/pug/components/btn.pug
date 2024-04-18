@@ -1,0 +1,17 @@
+mixin btn(options)
+    - let {text, type, title, link, isBordered} = options
+    - let classNames = "btn" + (isBordered ? ' btn--bordered' : '')
+    - link = link ? link : null
+    
+    if link
+        a(
+            class=classNames 
+            href=link
+        ) !{text}
+    else
+        button(
+            class=classNames 
+            disabled=disabled 
+            title=title 
+            type=type
+        ) !{text}

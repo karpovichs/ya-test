@@ -1,4 +1,7 @@
 include ./components/head
+include ./components/marquee
+include ./components/btn
+include ./components/member
 
 doctype html
 html(lang='ru')
@@ -7,8 +10,88 @@ html(lang='ru')
 
     body
         header
+
         main
-            h1 init
-        footer
+            h1.visually-hidden init
+
+            
+
+            section.hero
+                .hero__circle
+                    img(src="./img/hero__circle.png" width=660 height=660 alt='text')
+                .hero__chess
+                    img(src="./img/hero__chess.png" width=1627 height=585 alt='text')
+                .hero__wrap
+                    .hero__logo
+                    .hero__text
+                        h2.hero__title 
+                            span.hero__title-item Превратите уездный город 
+                            span.hero__title-item.hero__title-item--center в столицу 
+                            span.hero__title-item.hero__title-item--right земного шара
+                        p.hero__subtext Оплатите взнос на телеграммы для организации Международного васюкинского турнира по шахматам
+                        .hero__buttons
+                            +btn({
+                                text: 'Поддержать шахматную мысль',
+                                link: '#'
+                            })
+
+                            +btn({
+                                text: 'Подробнее о турнире',
+                                isBordered: true,
+                            })
+                .hero__marquee
+                    +marquee
+            section.event
+                .event__block
+                    p.event__title Чтобы поддержать Международный васюкинский турнир посетите лекцию на тему: <b>«Плодотворная дебютная идея»</b>
+                    img()
+                .event__block
+                    p.event__title и <b>Сеанс одновременной игры в шахматы на 160 досках</b> гроссмейстера О. Бендера
+                    .event__info
+
+
+            section
+                h2 Этапы преображения Васюков <span>Будущие источники обогащения васюкинцев</span>
+                ol
+                    li Строительство железнодорожной магистрали Москва-Васюки
+                    li Открытие фешенебельной гостиницы «Проходная пешка» и других небоскрёбов
+                    li Поднятие сельского хозяйства в радиусе на тысячу километров: производство овощей, фруктов, икры, шоколадных конфет
+                    li Строительство дворца для турнира
+                    li Размещение гаражей для гостевого автотранспорта
+                    li Постройка сверхмощной радиостанции для передачи всему миру сенсационных результатов
+                    li Создание аэропорта «Большие Васюки» с регулярным отправлением почтовых самолётов и дирижаблей во все концы света, включая Лос-Анжелос и Мельбурн
+            
+            section.members
+                h2.members__title Участники турнира
+                .members__list
+                    +member({
+                        className: 'members__item',
+                        name: 'Хозе-Рауль Капабланка',
+                    })
+                    +member({
+                        className: 'members__item',
+                        name: 'Эммануил Ласкер',
+                    })
+                    +member({
+                        className: 'members__item',
+                        name: 'Александр Алехин',
+                    })
+                    +member({
+                        className: 'members__item',
+                        name: 'Арон Нимцович',
+                    })
+                    +member({
+                        className: 'members__item',
+                        name: 'Рихард Рети',
+                    })
+                    +member({
+                        className: 'members__item',
+                        name: 'Остап Бендер',
+                        text: 'Гроссмейстер',
+                    })
+
+            +marquee
+        footer.footer
+            p.footer__text Все персонажи, события и цитаты являются вымышленными и не принадлежат создателям сайта. С подробностями можно познакомиться в главе XXXIV романа Ильи Ильфа и Евгения Петрова «Двенадцать стульев».
 
         script(src="js/main.js")
