@@ -1,4 +1,19 @@
-.members__list {
-    display: flex;
-    flex-wrap: wrap;
+.members {
+    // display: flex;
+    // flex-wrap: wrap;
+    width: $desktop-wrapper;
+    margin: 0 auto;
+    @include mobile {
+        width: calc(100% - 40px);
+        
+    }
+}
+
+.members__item {
+    width: 394px;
+    margin-right: 20px;
+
+    &:last-of-type {
+        margin-right: 0;
+    }
 }

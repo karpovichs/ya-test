@@ -1,0 +1,22 @@
+.slider {
+    @include transition(transform);
+    position: relative;
+        overflow: hidden;
+    width: 100%;
+}
+
+.slider__wrap {
+    @include transition(transform);
+    position: relative;
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+
+    @include mobile {
+        
+    }
+}
+
+.slider__slide {
+    flex-shrink: 0;
+}

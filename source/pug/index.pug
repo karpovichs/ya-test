@@ -80,45 +80,66 @@ html(lang='ru')
                         p.event__note По всем вопросам обращаться в администрацию к К. Михельсону
 
 
-            //- section
-            //-     h2 Этапы преображения Васюков <span>Будущие источники обогащения васюкинцев</span>
-            //-     ol
-            //-         li Строительство железнодорожной магистрали Москва-Васюки
-            //-         li Открытие фешенебельной гостиницы «Проходная пешка» и других небоскрёбов
-            //-         li Поднятие сельского хозяйства в радиусе на тысячу километров: производство овощей, фруктов, икры, шоколадных конфет
-            //-         li Строительство дворца для турнира
-            //-         li Размещение гаражей для гостевого автотранспорта
-            //-         li Постройка сверхмощной радиостанции для передачи всему миру сенсационных результатов
-            //-         li Создание аэропорта «Большие Васюки» с регулярным отправлением почтовых самолётов и дирижаблей во все концы света, включая Лос-Анжелос и Мельбурн
-            
-            //- section.members
-            //-     h2.members__title Участники турнира
-            //-     .members__list
-            //-         +member({
-            //-             className: 'members__item',
-            //-             name: 'Хозе-Рауль Капабланка',
-            //-         })
-            //-         +member({
-            //-             className: 'members__item',
-            //-             name: 'Эммануил Ласкер',
-            //-         })
-            //-         +member({
-            //-             className: 'members__item',
-            //-             name: 'Александр Алехин',
-            //-         })
-            //-         +member({
-            //-             className: 'members__item',
-            //-             name: 'Арон Нимцович',
-            //-         })
-            //-         +member({
-            //-             className: 'members__item',
-            //-             name: 'Рихард Рети',
-            //-         })
-            //-         +member({
-            //-             className: 'members__item',
-            //-             name: 'Остап Бендер',
-            //-             text: 'Гроссмейстер',
-            //-         })
+            //- section.stages
+            //-     h2.stages__title Этапы преображения Васюков <span class='stages__title-note'>Будущие источники обогащения васюкинцев</span>
+            //-     .stages__plane 
+            //-         img(src='./img/plane.png' srcset='./img/plane@2x.png 2x' width=401 height=235 alt='самолет в Васюки')
+            //-     .stages__wrapper.slider.js-slider
+            //-         .stages__list.slider__wrap
+            //-             .stages__item.stages__item--double.slider__slide
+            //-                 .stages__text Строительство железнодорожной магистрали Москва-Васюки
+            //-                 .stages__text Открытие фешенебельной гостиницы «Проходная пешка» и других небоскрёбов
+            //-             .stages__item.stages__item--vertical.slider__slide
+            //-                 .stages__text Поднятие сельского хозяйства в радиусе на тысячу километров: производство овощей, фруктов, икры, шоколадных конфет
+            //-             .stages__item.stages__item--double.slider__slide
+            //-                 .stages__text Строительство дворца для турнира
+            //-                 .stages__text Размещение гаражей для гостевого <br> автотранспорта
+            //-             .stages__item.slider__slide
+            //-                 .stages__text Постройка сверхмощной радиостанции для передачи всему миру сенсационных результатов
+            //-             .stages__item.stages__item--horizontal.slider__slide
+            //-                 .stages__text Создание аэропорта «Большие Васюки» с регулярным отправлением почтовых самолётов и дирижаблей во все концы света, включая Лос-Анжелос и Мельбурн
+            //-         button.slider__prev назад
+            //-         button.slider__next вперед
+
+            //-         p
+            //-             span.slider__current
+            //-             span  / 
+            //-             span.slider__total
+            section.members.slider.js-slider-members
+                button.slider__prev назад
+                button.slider__next вперед
+
+                p
+                    span.slider__current
+                    span  / 
+                    span.slider__total
+                h2.members__title Участники турнира
+                .members__list.slider__wrap
+                    +member({
+                        className: 'members__item slider__slide',
+                        name: 'Хозе-Рауль Капабланка',
+                    })
+                    +member({
+                        className: 'members__item slider__slide',
+                        name: 'Эммануил Ласкер',
+                    })
+                    +member({
+                        className: 'members__item slider__slide',
+                        name: 'Александр Алехин',
+                    })
+                    +member({
+                        className: 'members__item slider__slide',
+                        name: 'Арон Нимцович',
+                    })
+                    +member({
+                        className: 'members__item slider__slide',
+                        name: 'Рихард Рети',
+                    })
+                    +member({
+                        className: 'members__item slider__slide',
+                        name: 'Остап Бендер',
+                        text: 'Гроссмейстер',
+                    })
 
             +marquee
         footer.footer
