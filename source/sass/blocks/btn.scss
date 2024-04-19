@@ -18,6 +18,13 @@
     font-weight: 600;
     text-decoration: none;
     text-align: center;
+    border: 2px solid transparent;
+
+    @include mobile {
+        width: 100%;
+        padding: 14px 41px;
+        max-width: 335px;
+    }
 
     &:hover {
         color: $color-black;
@@ -28,6 +35,11 @@
         color: $color-black;
         border: 2px solid $color-black;
         background: none;
+
+        @include mobile {
+            background-color: rgba($color-white, .9);
+            border-color: transparent;
+        }
 
         &:hover {
             color: $color-white;

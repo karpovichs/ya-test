@@ -3,22 +3,51 @@
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    height: 100vh;
+    min-height: 720px;
     background-color: $color-beige;
-}
 
-.hero__circle {
-    position: absolute;
-    top: -44px;
-    left: calc(50vw - 10px);
-    animation: rotate 20s linear infinite;
+    @include tablet {
+        min-height: 800px;
+    }
+    
+    @include mobile {
+        min-height: 680px;
+    }
+
+    &::before,
+    &::after {
+        content: "";
+        z-index: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: url('../img/hero__texture.png');
+        background-position: center center;
+        mix-blend-mode: color-burn;
+    }
 }
 
 .hero__chess {
+    z-index: 1;
     position: absolute;
-    left: calc(50vw - 50%);
+    left: calc(50vw);
     width: 1625px;
     bottom: 0;
+    transform: translateX(-50%);
+
+    @include tablet {
+        width: 1200px;
+        transform: translateX(-40%);
+        // transform: translateX(-70%);
+    }
+
+    @include mobile {
+        width: 885px;
+        transform: translateX(-70%);
+    }
 
     img {
         display: block;
@@ -29,18 +58,28 @@
 .hero__wrap {
     position: relative;
     z-index: 1;
-    width: 1222px;
+    width: $desktop-wrapper;
     margin: 0 auto;
+
+    @include tablet {
+        width: $tablet-wrapper;
+    }
 
     @include mobile {
         width: calc(100vw - 40px);
     }
 }
+
 .hero__logo {
     width: 245px;
     height: 36px;
     margin: 26px 0 62px;
-    background-color: $color-text;
+
+    @include mobile {
+        width: 213px;
+        height: 32px;
+        margin: 18px 0 40px;
+    }
 }
 
 .hero__text {
@@ -79,14 +118,20 @@
 .hero__subtext {
     margin: 0 0 40px;
     text-align: center;
+
+    @include mobile {
+        margin: 0 0 32px;
+        text-align: left;
+    }
 }
 
 .hero__buttons {
     display: flex;
     gap: 16px;
 
-    @include mobile {
+    @include tablet {
         flex-direction: column;
+        gap: 14px;
     }
 }
 
@@ -94,14 +139,4 @@
     position: relative;
     z-index: 1;
     margin-top: auto;
-}
-
-@keyframes rotate {
-    from {
-        transform: rotate(0);
-    }
-
-    to {
-        transform: rotate(360deg);
-    }
 }

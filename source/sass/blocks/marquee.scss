@@ -29,13 +29,14 @@
 .marquee__item {
     display: flex;
     align-items: center;
-    flex: 0 0 auto;
+    margin-right: auto;
 
     &::after {
         content: "";
         display: flex;
         width: 6px;
         height: 6px;
+        margin-left: auto;
         margin: 0 12px;
         border-radius: 50%;
         background-color: $color-white;;

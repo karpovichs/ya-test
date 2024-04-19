@@ -3,6 +3,30 @@ include ./components/marquee
 include ./components/btn
 include ./components/member
 
+- 
+    let event = [
+        {
+            name: 'Место проведения:', 
+            text: 'Клуб «Картонажник»'
+        },
+        {
+            name: 'Дата и время мероприятия:', 
+            text: '22 июня 1927 г. в 18:00'
+        },
+        {
+            name: 'Стоимость входных билетов:', 
+            text: '20 коп.'
+        },
+        {
+            name: 'Плата за игру:', 
+            text: '50 коп.'
+        },
+        {
+            name: 'Взнос на телеграммы:', 
+            text: '<s>100 руб.</s> 21 руб. 16 коп.'
+        },
+    ]
+
 doctype html
 html(lang='ru')
 
@@ -12,17 +36,13 @@ html(lang='ru')
         header
 
         main
-            h1.visually-hidden init
-
-            
+            h1.visually-hidden Международный васюкинский турнир
 
             section.hero
-                .hero__circle
-                    img(src="./img/hero__circle.png" width=660 height=660 alt='text')
                 .hero__chess
-                    img(src="./img/hero__chess.png" width=1627 height=585 alt='text')
+                    img(src='./img/hero__chess.png' srcset='./img/hero__chess@2x.png 2x' width=1627 height=794 alt='уездный город')
                 .hero__wrap
-                    .hero__logo
+                    img.hero__logo(width=245 height=36 src='./img/logo.svg' alt='клуб четырех коней')
                     .hero__text
                         h2.hero__title 
                             span.hero__title-item Превратите уездный город 
@@ -41,54 +61,63 @@ html(lang='ru')
                             })
                 .hero__marquee
                     +marquee
-            section.event
-                .event__block
-                    p.event__title Чтобы поддержать Международный васюкинский турнир посетите лекцию на тему: <b>«Плодотворная дебютная идея»</b>
-                    img()
-                .event__block
-                    p.event__title и <b>Сеанс одновременной игры в шахматы на 160 досках</b> гроссмейстера О. Бендера
-                    .event__info
+
+            //- section.event
+            //-     .event__block
+            //-         p.event__title Чтобы поддержать Международный васюкинский турнир посетите лекцию на тему: <b>«Плодотворная дебютная идея»</b>
+            //-         img.event__players(width=394 height=250 src='./img/event__players.jpg' alt='text')
+            //-     .event__block
+            //-         .event__collage
+            //-             img(width=526 height=586 src='./img/event__collage.png' alt='text')
+            //-         .event__block-column.event__block-column--narrow
+            //-             p.event__title и <b>Сеанс одновременной игры в шахматы на 160 досках</b> гроссмейстера О. Бендера
+            //-             //- .event__info
+            //-             for item in event
+            //-                 .event__info
+            //-                     p.event__info-item.event__info-item--name= item.name
+            //-                     p.event__info-item.event__info-item--text!= item.text
+            //-             p.event__note По всем вопросам обращаться в администрацию к К. Михельсону
 
 
-            section
-                h2 Этапы преображения Васюков <span>Будущие источники обогащения васюкинцев</span>
-                ol
-                    li Строительство железнодорожной магистрали Москва-Васюки
-                    li Открытие фешенебельной гостиницы «Проходная пешка» и других небоскрёбов
-                    li Поднятие сельского хозяйства в радиусе на тысячу километров: производство овощей, фруктов, икры, шоколадных конфет
-                    li Строительство дворца для турнира
-                    li Размещение гаражей для гостевого автотранспорта
-                    li Постройка сверхмощной радиостанции для передачи всему миру сенсационных результатов
-                    li Создание аэропорта «Большие Васюки» с регулярным отправлением почтовых самолётов и дирижаблей во все концы света, включая Лос-Анжелос и Мельбурн
+            //- section
+            //-     h2 Этапы преображения Васюков <span>Будущие источники обогащения васюкинцев</span>
+            //-     ol
+            //-         li Строительство железнодорожной магистрали Москва-Васюки
+            //-         li Открытие фешенебельной гостиницы «Проходная пешка» и других небоскрёбов
+            //-         li Поднятие сельского хозяйства в радиусе на тысячу километров: производство овощей, фруктов, икры, шоколадных конфет
+            //-         li Строительство дворца для турнира
+            //-         li Размещение гаражей для гостевого автотранспорта
+            //-         li Постройка сверхмощной радиостанции для передачи всему миру сенсационных результатов
+            //-         li Создание аэропорта «Большие Васюки» с регулярным отправлением почтовых самолётов и дирижаблей во все концы света, включая Лос-Анжелос и Мельбурн
             
-            section.members
-                h2.members__title Участники турнира
-                .members__list
-                    +member({
-                        className: 'members__item',
-                        name: 'Хозе-Рауль Капабланка',
-                    })
-                    +member({
-                        className: 'members__item',
-                        name: 'Эммануил Ласкер',
-                    })
-                    +member({
-                        className: 'members__item',
-                        name: 'Александр Алехин',
-                    })
-                    +member({
-                        className: 'members__item',
-                        name: 'Арон Нимцович',
-                    })
-                    +member({
-                        className: 'members__item',
-                        name: 'Рихард Рети',
-                    })
-                    +member({
-                        className: 'members__item',
-                        name: 'Остап Бендер',
-                        text: 'Гроссмейстер',
-                    })
+            //- section.members
+            //-     h2.members__title Участники турнира
+            //-     .members__list
+            //-         +member({
+            //-             className: 'members__item',
+            //-             name: 'Хозе-Рауль Капабланка',
+            //-         })
+            //-         +member({
+            //-             className: 'members__item',
+            //-             name: 'Эммануил Ласкер',
+            //-         })
+            //-         +member({
+            //-             className: 'members__item',
+            //-             name: 'Александр Алехин',
+            //-         })
+            //-         +member({
+            //-             className: 'members__item',
+            //-             name: 'Арон Нимцович',
+            //-         })
+            //-         +member({
+            //-             className: 'members__item',
+            //-             name: 'Рихард Рети',
+            //-         })
+            //-         +member({
+            //-             className: 'members__item',
+            //-             name: 'Остап Бендер',
+            //-             text: 'Гроссмейстер',
+            //-         })
 
             +marquee
         footer.footer
