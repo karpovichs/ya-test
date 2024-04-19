@@ -62,21 +62,22 @@ html(lang='ru')
                 .hero__marquee
                     +marquee
 
-            //- section.event
-            //-     .event__block
-            //-         p.event__title Чтобы поддержать Международный васюкинский турнир посетите лекцию на тему: <b>«Плодотворная дебютная идея»</b>
-            //-         img.event__players(width=394 height=250 src='./img/event__players.jpg' alt='text')
-            //-     .event__block
-            //-         .event__collage
-            //-             img(width=526 height=586 src='./img/event__collage.png' alt='text')
-            //-         .event__block-column.event__block-column--narrow
-            //-             p.event__title и <b>Сеанс одновременной игры в шахматы на 160 досках</b> гроссмейстера О. Бендера
-            //-             //- .event__info
-            //-             for item in event
-            //-                 .event__info
-            //-                     p.event__info-item.event__info-item--name= item.name
-            //-                     p.event__info-item.event__info-item--text!= item.text
-            //-             p.event__note По всем вопросам обращаться в администрацию к К. Михельсону
+            section.event
+                .event__block
+                    p.event__title 
+                        span Чтобы поддержать Международный васюкинский турнир 
+                        img.event__players(src='./img/event__players.jpg' srcset="./img/event__players@2x.jpg 2x" width=394 height=250 alt='фото игроков в шахматы')
+                        span посетите лекцию на тему: <b>«Плодотворная дебютная идея»</b>
+                .event__block
+                    .event__collage
+                        img(src='./img/event__collage.png' srcset='./img/event__collage@2x.png 2x' width=526 height=586 alt='игрок в шахматы мечтает о рублях')
+                    .event__block-column.event__block-column--narrow
+                        p.event__title и сеанс <b> одновременной игры в шахматы на 160 досках</b> гроссмейстера О. Бендера
+                        for item in event
+                            .event__info
+                                p.event__info-item.event__info-item--name= item.name
+                                p.event__info-item.event__info-item--text!= item.text
+                        p.event__note По всем вопросам обращаться в администрацию к К. Михельсону
 
 
             //- section

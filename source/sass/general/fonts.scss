@@ -37,3 +37,13 @@
       url("../fonts/Merriweather-Regular.woff2") format("woff2"),
       url("../fonts/Merriweather-Regular.woff2") format("woff");
 }
+
+@font-face {
+    font-family: "Merriweather";
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+    src:
+      url("../fonts/Merriweather-Bold.woff2") format("woff2"),
+      url("../fonts/Merriweather-Bold.woff2") format("woff");
+}
