@@ -1,4 +1,5 @@
-import test from './modules/test'
-import slider from './modules/slider'
-test()
-slider()
+import stagesSlider from './modules/stages-slider'
+import membersSlider from './modules/members-slider'
+
+stagesSlider()
+membersSlider()

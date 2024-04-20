@@ -19,5 +19,6 @@
 
     @include mobile {
         width: 100%;
+        max-width: $mobile-max-wrapper;
     }
 }

@@ -5,7 +5,7 @@
     align-items: center;
     width: 394px;
 
-    @include mobile {
+    @include tablet {
         width: 100%;
     }
 }
@@ -15,15 +15,33 @@
     height: 320px;
     margin-bottom: 20px;
     border-radius: 50%;
+
+    @include mobile {
+        width: 244px;
+        height: 244px;
+        margin-bottom: 28px;
+    }
 }
 
 .member__name {
     margin-bottom: 6px;
     font-size: 24px;
     font-weight: 600;
+
+    @include mobile {
+        margin-bottom: 8px;
+    }
+
+    @include small-mobile {
+        font-size: 20px;
+    }
 }
 
 .member__info {
     margin-bottom: 20px;
     opacity: .6;
+
+    @include small-mobile {
+        font-size: 16px;
+    }
 }

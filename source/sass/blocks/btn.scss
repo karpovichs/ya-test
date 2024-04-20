@@ -46,4 +46,18 @@
             background-color: $color-black;
         }
     }
+
+    &--small {
+        width: auto;
+        padding: 7px 12px;
+        color: $color-blue;
+        background: transparent;
+        border: 1px solid $color-blue;
+
+        &:hover {
+            color: $color-white;
+            background-color: $color-blue;
+
+        }
+    }
 }

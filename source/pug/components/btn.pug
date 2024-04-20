@@ -1,6 +1,6 @@
 mixin btn(options)
-    - let {text, type, title, link, isBordered} = options
-    - let classNames = "btn" + (isBordered ? ' btn--bordered' : '')
+    - let {text, type, title, link, isBordered, isSmall} = options
+    - let classNames = "btn" + (isBordered ? ' btn--bordered' : '') + (isSmall ? ' btn--small' : '')
     - link = link ? link : null
     
     if link

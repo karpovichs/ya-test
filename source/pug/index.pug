@@ -2,6 +2,7 @@ include ./components/head
 include ./components/marquee
 include ./components/btn
 include ./components/member
+include ./components/svg
 
 - 
     let event = [
@@ -33,6 +34,8 @@ html(lang='ru')
     +head('title')
 
     body
+        div(style="display:none")
+            <include src="build/img/sprite.svg"></include>
         header
 
         main
@@ -80,39 +83,34 @@ html(lang='ru')
                         p.event__note По всем вопросам обращаться в администрацию к К. Михельсону
 
 
-            //- section.stages
-            //-     h2.stages__title Этапы преображения Васюков <span class='stages__title-note'>Будущие источники обогащения васюкинцев</span>
-            //-     .stages__plane 
-            //-         img(src='./img/plane.png' srcset='./img/plane@2x.png 2x' width=401 height=235 alt='самолет в Васюки')
-            //-     .stages__wrapper.slider.js-slider
-            //-         .stages__list.slider__wrap
-            //-             .stages__item.stages__item--double.slider__slide
-            //-                 .stages__text Строительство железнодорожной магистрали Москва-Васюки
-            //-                 .stages__text Открытие фешенебельной гостиницы «Проходная пешка» и других небоскрёбов
-            //-             .stages__item.stages__item--vertical.slider__slide
-            //-                 .stages__text Поднятие сельского хозяйства в радиусе на тысячу километров: производство овощей, фруктов, икры, шоколадных конфет
-            //-             .stages__item.stages__item--double.slider__slide
-            //-                 .stages__text Строительство дворца для турнира
-            //-                 .stages__text Размещение гаражей для гостевого <br> автотранспорта
-            //-             .stages__item.slider__slide
-            //-                 .stages__text Постройка сверхмощной радиостанции для передачи всему миру сенсационных результатов
-            //-             .stages__item.stages__item--horizontal.slider__slide
-            //-                 .stages__text Создание аэропорта «Большие Васюки» с регулярным отправлением почтовых самолётов и дирижаблей во все концы света, включая Лос-Анжелос и Мельбурн
-            //-         button.slider__prev назад
-            //-         button.slider__next вперед
+            section.stages
+                h2.stages__title Этапы преображения Васюков <span class='stages__title-note'>Будущие источники обогащения васюкинцев</span>
+                .stages__block
+                    .stages__plane 
+                        img(src='./img/plane.png' srcset='./img/plane@2x.png 2x' width=401 height=235 alt='самолет в Васюки')
+                    .stages__wrapper.slider.js-slider
+                        .stages__list.slider__wrap
+                            .stages__item.stages__item--double.slider__slide
+                                .stages__text Строительство железнодорожной магистрали Москва-Васюки
+                                .stages__text Открытие фешенебельной гостиницы «Проходная пешка» и других небоскрёбов
+                            .stages__item.stages__item--vertical.slider__slide
+                                .stages__text Поднятие сельского хозяйства в радиусе на тысячу километров: производство овощей, фруктов, икры, шоколадных конфет
+                            .stages__item.stages__item--double.slider__slide
+                                .stages__text Строительство дворца для турнира
+                                .stages__text Размещение гаражей для гостевого <br> автотранспорта
+                            .stages__item.slider__slide
+                                .stages__text Постройка сверхмощной радиостанции для передачи всему миру сенсационных результатов
+                            .stages__item.stages__item--horizontal.slider__slide
+                                .stages__text Создание аэропорта «Большие Васюки» с регулярным отправлением почтовых самолётов и дирижаблей во все концы света, включая Лос-Анжелос и Мельбурн
+                        .slider__controls
+                            button.slider__control.slider__prev
+                                +svg('arrow-left', 44, 44)
+                            .slider__pagination
+                            button.slider__control.slider__next 
+                                +svg('arrow-right', 44, 44)
 
-            //-         p
-            //-             span.slider__current
-            //-             span  / 
-            //-             span.slider__total
+                    
             section.members.slider.js-slider-members
-                button.slider__prev назад
-                button.slider__next вперед
-
-                p
-                    span.slider__current
-                    span  / 
-                    span.slider__total
                 h2.members__title Участники турнира
                 .members__list.slider__wrap
                     +member({
@@ -140,6 +138,15 @@ html(lang='ru')
                         name: 'Остап Бендер',
                         text: 'Гроссмейстер',
                     })
+                .members__controls.slider__controls
+                    button.slider__control.slider__prev
+                        +svg('arrow-left', 44, 44)
+                    .slider__counter
+                        span.slider__current
+                        span  / 
+                        span.slider__total
+                    button.slider__control.slider__next
+                        +svg('arrow-right', 44, 44)
 
             +marquee
         footer.footer
