@@ -43,7 +43,9 @@ html(lang='ru')
 
             section.hero
                 .hero__chess
-                    img(src='./img/hero__chess.png' srcset='./img/hero__chess@2x.png 2x' width=1627 height=794 alt='уездный город')
+                    picture
+                        source(srcset='./img/chess--mobile.png 1x, ./img/chess--mobile@2x.png' media='(max-width: 1279px)')
+                        img(src='./img/chess.png' srcset='./img/chess@2x.png 2x' width=1627 height=794 alt='уездный город')
                 .hero__wrap
                     img.hero__logo(width=245 height=36 src='./img/logo.svg' alt='клуб четырех коней')
                     .hero__text
@@ -69,11 +71,11 @@ html(lang='ru')
                 .event__block
                     p.event__title 
                         span Чтобы поддержать Международный васюкинский турнир 
-                        img.event__players(src='./img/event__players.jpg' srcset="./img/event__players@2x.jpg 2x" width=394 height=250 alt='фото игроков в шахматы')
+                        img.event__players(src='./img/players.jpg' srcset="./img/players@2x.jpg 2x" width=394 height=250 alt='фото игроков в шахматы')
                         span посетите лекцию на тему: <b>«Плодотворная дебютная идея»</b>
                 .event__block
                     .event__collage
-                        img(src='./img/event__collage.png' srcset='./img/event__collage@2x.png 2x' width=526 height=586 alt='игрок в шахматы мечтает о рублях')
+                        img(src='./img/collage.png' srcset='./img/collage@2x.png 2x' width=526 height=586 alt='игрок в шахматы мечтает о рублях')
                     .event__block-column.event__block-column--narrow
                         p.event__title и сеанс <b> одновременной игры в шахматы на 160 досках</b> гроссмейстера О. Бендера
                         for item in event
@@ -87,7 +89,9 @@ html(lang='ru')
                 h2.stages__title Этапы преображения Васюков <span class='stages__title-note'>Будущие источники обогащения васюкинцев</span>
                 .stages__block
                     .stages__plane 
-                        img(src='./img/plane.png' srcset='./img/plane@2x.png 2x' width=401 height=235 alt='самолет в Васюки')
+                        picture
+                            source(srcset='./img/plane--mobile.png 1x, ./img/plane--mobile@2x.png' media='(max-width: 1279px)')
+                            img(src='./img/plane.png' srcset='./img/plane@2x.png 2x' width=401 height=235 alt='самолет в Васюки')
                     .stages__wrapper.slider.js-slider
                         .stages__list.slider__wrap
                             .stages__item.stages__item--double.slider__slide

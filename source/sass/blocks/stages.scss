@@ -30,6 +30,7 @@
     
     @include mobile {
         font-size: 36px;
+        line-height: 1.12
     }
 
     @include small-mobile {
@@ -48,6 +49,7 @@
     @include mobile {
         display: block;
         width: 100%;
+        margin-top: 12px;
     }
 }
 
@@ -110,7 +112,7 @@
             right: 0;
             bottom: 0;
             left: 0;
-            background-image: url(../img/hero__texture.png);
+            background-image: url(../img/texture.png);
             mix-blend-mode: color-burn;
         }
     }
@@ -170,6 +172,8 @@
     @include mobile {
         margin-bottom: 28px;
         padding: 0;
+        line-height: 1.1;
+        letter-spacing: -1px;
         background: none;
 
         &:last-of-type {
@@ -185,7 +189,7 @@
         right: 0;
         bottom: 0;
         left: 0;
-        background-image: url(../img/hero__texture.png);
+        background-image: url(../img/texture.png);
         mix-blend-mode: color-burn;
 
         @include mobile {

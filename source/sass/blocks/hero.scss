@@ -24,7 +24,7 @@
         left: 0;
         right: 0;
         bottom: 0;
-        background-image: url('../img/hero__texture.png');
+        background-image: url('../img/texture.png');
         background-position: center center;
         mix-blend-mode: color-burn;
     }
@@ -33,20 +33,20 @@
 .hero__chess {
     z-index: 1;
     position: absolute;
-    left: calc(50vw);
+    left: calc(51vw);
     width: 1625px;
-    bottom: 0;
+    bottom: 9px;
     transform: translateX(-50%);
 
     @include tablet {
         width: 1200px;
-        transform: translateX(-40%);
-        // transform: translateX(-70%);
     }
 
     @include mobile {
+        bottom: 18;
+        left: 50vw;
         width: 885px;
-        transform: translateX(-70%);
+        transform: translateX(-66.5%);
     }
 
     img {
@@ -120,6 +120,7 @@
 .hero__subtext {
     margin: 0 0 40px;
     text-align: center;
+    letter-spacing: -1px;
 
     @include mobile {
         margin: 0 0 32px;
@@ -133,7 +134,7 @@
 
     @include tablet {
         flex-direction: column;
-        gap: 14px;
+        gap: 12px;
     }
 }
 
