@@ -1,13 +1,12 @@
 .btn {
     @include button-reset;
     @include transition(color, background-color);
-    
+
     display: flex;
     justify-content: center;
     align-content: center;
     width: 263px;
     padding: 12px 49px;
-    // возможно стоит поменять 12 на 20
 
     color: $color-white;
     background-color: $color-black;

@@ -4,7 +4,7 @@ export default function Slider(options) {
     privates.options = options
     privates.isOn = false
 
-    privates.main = document.querySelector(privates.options.main);
+    privates.main = document.querySelector(privates.options.main)
 
     privates.elements = {
         'wrap': privates.main.querySelector('.slider__wrap'),
@@ -71,9 +71,9 @@ export default function Slider(options) {
 
     this.make_pagination = () => {
         for (let i = 0; i < privates.opt.max_position; i++) {
-            const item = document.createElement("div");
+            const item = document.createElement("div")
             item.classList.add('slider__pagination-item')
-            privates.elements.pagination.appendChild(item);
+            privates.elements.pagination.appendChild(item)
         }
 
         privates.elements.pagination_items = privates.elements.pagination.querySelectorAll('.slider__pagination-item')
@@ -91,7 +91,7 @@ export default function Slider(options) {
 
             privates.opt.currentTransform -= privates.elements.activeSlide.offsetWidth
             privates.elements.wrap.style.transform = `translateX(-${privates.opt.currentTransform}px)`
-            
+
             this.getSpaceBetween()
 
             console.log('current spaceBetween', privates.opt.spaceBetween)
@@ -105,7 +105,6 @@ export default function Slider(options) {
             this.check_end()
             this.check_start()
         }
-        
     }
 
     this.next_slide = () => {
@@ -126,12 +125,10 @@ export default function Slider(options) {
                 privates.elements.current.textContent = privates.opt.position + 1
             }
 
-            
             this.move_slide()
             this.check_end()
             this.check_start()
         }
-        
     }
 
     this.destroy = () => {
@@ -150,7 +147,6 @@ export default function Slider(options) {
         if(privates.elements.pagination) {
             this.remove_pagination()
         }
-        
     }
 
     this.init = () => {
@@ -170,7 +166,7 @@ export default function Slider(options) {
             if(privates.elements.total) {
                 privates.elements.total.textContent = privates.opt.max_position
             }
-    
+
             if(privates.elements.current) {
                 privates.elements.current.textContent = privates.opt.position + 1
             }
@@ -178,7 +174,7 @@ export default function Slider(options) {
             if(privates.elements.prev !== null) {
                 privates.elements.prev.addEventListener('click', this.on_prev_click)
             }
-    
+
             if(privates.elements.next !== null) {
                 privates.elements.next.addEventListener('click', this.on_next_click)
             }
@@ -187,7 +183,6 @@ export default function Slider(options) {
                 this.make_pagination()
             }
         }
-        
     }
 
     this.getSpaceBetween = () => {
@@ -204,7 +199,7 @@ export default function Slider(options) {
         window.addEventListener('resize', () => {
             if (window.innerWidth >= 1280 && privates.isOn) {
                 this.destroy()
-            } 
+            }
 
             if (window.innerWidth < 1280 && !privates.isOn) {
                 this.init()

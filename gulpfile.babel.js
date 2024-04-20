@@ -15,8 +15,8 @@ import webpack from 'webpack-stream'
 import webpackConfig from './webpack.config'
 
 import pug from 'gulp-pug'
-import posthtml from 'gulp-posthtml';
-import include from 'posthtml-include';
+import posthtml from 'gulp-posthtml'
+import include from 'posthtml-include'
 
 import svgstore from 'gulp-svgstore'
 
@@ -57,7 +57,7 @@ gulp.task('sprite', () => gulp.src('source/img/sprite/*.svg')
     inlineSvg: true,
   }))
   .pipe(rename('sprite.svg'))
-  .pipe(gulp.dest('build/img')));
+  .pipe(gulp.dest('build/img')))
 
 gulp.task('js', () => gulp.src('source/js/index.js')
   .pipe(webpack(webpackConfig))

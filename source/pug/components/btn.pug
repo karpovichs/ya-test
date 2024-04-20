@@ -1,5 +1,5 @@
 mixin btn(options)
-    - let {text, type, title, link, isBordered, isSmall} = options
+    - let {text, type, title, link, isBordered, isSmall, disabled} = options
     - let classNames = "btn" + (isBordered ? ' btn--bordered' : '') + (isSmall ? ' btn--small' : '')
     - link = link ? link : null
     
@@ -12,6 +12,6 @@ mixin btn(options)
         button(
             class=classNames 
             disabled=disabled 
-            title=title 
-            type=type
+            title=title ? title : 'кнопка'
+            type=type ? type : 'button'
         ) !{text}
