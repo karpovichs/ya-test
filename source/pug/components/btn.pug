@@ -1,17 +1,17 @@
 mixin btn(options)
-    - let {text, type, title, link, isBordered, isSmall, disabled} = options
-    - let classNames = "btn" + (isBordered ? ' btn--bordered' : '') + (isSmall ? ' btn--small' : '')
-    - link = link ? link : null
-    
-    if link
-        a(
-            class=classNames 
-            href=link
-        ) !{text}
-    else
-        button(
-            class=classNames 
-            disabled=disabled 
-            title=title ? title : 'кнопка'
-            type=type ? type : 'button'
-        ) !{text}
+  - let {text, type, title, link, isBordered, isSmall, disabled} = options
+  - let classNames = "btn" + (isBordered ? ' btn--bordered' : '') + (isSmall ? ' btn--small' : '')
+  - link = link ? link : null
+
+  if link
+    a(
+      class=classNames
+      href=link
+    ) !{text}
+  else
+    button(
+      class=classNames
+      disabled=disabled
+      title=title ? title : 'кнопка'
+      type=type ? type : 'button'
+    ) !{text}

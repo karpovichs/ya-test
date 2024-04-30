@@ -66,12 +66,14 @@
   align-items: center;
   justify-content: center;
   gap: 6px;
+  width: auto;
   max-width: 200px;
 
   &.slider__counter {
     flex-wrap: nowrap;
     gap: 2px;
     width: 32px;
+    font-size: 16px;
     color: rgba($color-text, .6);
   }
 }

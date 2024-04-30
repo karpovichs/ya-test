@@ -5,151 +5,152 @@ include ./components/member
 include ./components/svg
 
 -
-    let event = [
-        {
-            name: 'Место проведения:',
-            text: 'Клуб «Картонажник»'
-        },
-        {
-            name: 'Дата и время мероприятия:',
-            text: '22 июня 1927 г. в 18:00'
-        },
-        {
-            name: 'Стоимость входных билетов:',
-            text: '20 коп.'
-        },
-        {
-            name: 'Плата за игру:',
-            text: '50 коп.'
-        },
-        {
-            name: 'Взнос на телеграммы:',
-            text: '<s>100 руб.</s> 21 руб. 16 коп.'
-        },
-    ]
+  let event = [
+    {
+      name: 'Место проведения:',
+      text: 'Клуб «Картонажник»'
+    },
+    {
+      name: 'Дата и время мероприятия:',
+      text: '22 июня 1927 г. в 18:00'
+    },
+    {
+      name: 'Стоимость входных билетов:',
+      text: '20 коп.'
+    },
+    {
+      name: 'Плата за игру:',
+      text: '50 коп.'
+    },
+    {
+      name: 'Взнос на телеграммы:',
+      text: '<s>100 руб.</s> 21 руб. 16 коп.'
+    },
+  ]
 
 doctype html
 html(lang='ru')
 
-    +head('Международный васюкинский турнир')
+  +head('Международный васюкинский турнир')
 
-    body
-        div(style="display:none")
-            <include src="build/img/sprite.svg"></include>
+  body
+    div(style="display:none")
+      <include src="build/img/sprite.svg"></include>
 
-        main
-            h1.visually-hidden Международный васюкинский турнир
+    main
+      h1.visually-hidden Международный васюкинский турнир
 
-            section.hero
-                .hero__chess
-                    picture
-                        source(srcset='./img/chess--mobile.png 1x, ./img/chess--mobile@2x.png' media='(max-width: 1279px)')
-                        img(src='./img/chess.png' srcset='./img/chess@2x.png 2x' width=1627 height=794 alt='уездный город')
-                .hero__wrap
-                    img.hero__logo(width=245 height=36 src='./img/logo.svg' alt='клуб четырех коней')
-                    .hero__text
-                        h2.hero__title
-                            span.hero__title-item Превратите уездный город
-                            span.hero__title-item.hero__title-item--center в столицу
-                            span.hero__title-item.hero__title-item--right земного шара
-                        p.hero__subtext Оплатите взнос на телеграммы для организации Международного васюкинского турнира по шахматам
-                        .hero__buttons
-                            +btn({
-                                text: 'Поддержать шахматную мысль',
-                                link: '#'
-                            })
+      section.hero
+        .hero__chess
+          picture
+            source(srcset='./img/chess--mobile.png 1x, ./img/chess--mobile@2x.png 2x' media='(max-width: 1279px)')
+            img(src='./img/chess.png' srcset='./img/chess@2x.png 2x' width=1627 height=794 alt='уездный город')
+        .hero__wrap
+          img.hero__logo(width=245 height=36 src='./img/logo.svg' alt='клуб четырех коней')
+          .hero__text
+            h2.hero__title
+              span.hero__title-item Превратите уездный город
+              span.hero__title-item.hero__title-item--center в столицу
+              span.hero__title-item.hero__title-item--right земного шара
+            p.hero__subtext Оплатите взнос на телеграммы для организации Международного васюкинского турнира по шахматам
+            .hero__buttons
+              +btn({
+                  text: 'Поддержать шахматную мысль',
+                  link: '#support'
+              })
+              +btn({
+                text: 'Подробнее о турнире',
+                isBordered: true,
+                link: '#about'
+              })
+        .hero__marquee
+          +marquee
 
-                            +btn({
-                                text: 'Подробнее о турнире',
-                                isBordered: true,
-                            })
-                .hero__marquee
-                    +marquee
-
-            section.event
-                .event__block
-                    p.event__title
-                        span Чтобы поддержать Международный васюкинский турнир
-                        img.event__players(src='./img/players.jpg' srcset="./img/players@2x.jpg 2x" width=394 height=250 alt='фото игроков в шахматы')
-                        span посетите лекцию на тему: <b>«Плодотворная дебютная идея»</b>
-                .event__block
-                    .event__collage
-                        img(src='./img/collage.png' srcset='./img/collage@2x.png 2x' width=526 height=586 alt='игрок в шахматы мечтает о рублях')
-                    .event__block-column.event__block-column--narrow
-                        p.event__title и сеанс <b> одновременной игры в шахматы на 160 досках</b> гроссмейстера О. Бендера
-                        for item in event
-                            .event__info
-                                p.event__info-item.event__info-item--name= item.name
-                                p.event__info-item.event__info-item--text!= item.text
-                        p.event__note По всем вопросам обращаться в администрацию к К. Михельсону
-
-
-            section.stages
-                h2.stages__title Этапы преображения Васюков <span class='stages__title-note'>Будущие источники обогащения васюкинцев</span>
-                .stages__block
-                    .stages__plane
-                        picture
-                            source(srcset='./img/plane--mobile.png 1x, ./img/plane--mobile@2x.png' media='(max-width: 1279px)')
-                            img(src='./img/plane.png' srcset='./img/plane@2x.png 2x' width=401 height=235 alt='самолет в Васюки')
-                    .stages__wrapper.slider.swiper.js-slider-stages
-                        .stages__list.swiper-wrapper
-                            .stages__item.stages__item--double.swiper-slide
-                                .stages__text Строительство железнодорожной магистрали Москва-Васюки
-                                .stages__text Открытие фешенебельной гостиницы «Проходная пешка» и других небоскрёбов
-                            .stages__item.stages__item--vertical.swiper-slide
-                                .stages__text Поднятие сельского хозяйства в радиусе на тысячу километров: производство овощей, фруктов, икры, шоколадных конфет
-                            .stages__item.stages__item--double.swiper-slide
-                                .stages__text Строительство дворца для турнира
-                                .stages__text Размещение гаражей для гостевого <br> автотранспорта
-                            .stages__item.swiper-slide
-                                .stages__text Постройка сверхмощной радиостанции для передачи всему миру сенсационных результатов
-                            .stages__item.stages__item--horizontal.swiper-slide
-                                .stages__text Создание аэропорта «Большие Васюки» с регулярным отправлением почтовых самолётов и дирижаблей во все концы света, включая Лос-Анжелос и Мельбурн
-                        .slider__controls
-                            button.slider__control.slider__prev.swiper-button-prev
-                                +svg('arrow-left', 44, 44)
-                            .slider__pagination.swiper-pagination
-                            button.slider__control.slider__next.swiper-button-next
-                                +svg('arrow-right', 44, 44)
+      section.event
+        h2.visually-hidden О турнире
+        .event__block#support
+          p.event__title
+            span Чтобы поддержать Международный васюкинский турнир
+            img.event__players(src='./img/players.jpg' srcset="./img/players@2x.jpg 2x" width=394 height=250 alt='фото игроков в шахматы')
+            span посетите лекцию на тему: <b>«Плодотворная дебютная идея»</b>
+        .event__block#about
+          .event__collage
+            img(src='./img/collage.png' srcset='./img/collage@2x.png 2x' width=526 height=586 alt='игрок в шахматы мечтает о рублях')
+          .event__block-column.event__block-column--narrow
+            p.event__title и сеанс <b> одновременной игры в шахматы на 160 досках</b> гроссмейстера О. Бендера
+            for item in event
+              .event__info
+                p.event__info-item.event__info-item--name= item.name
+                p.event__info-item.event__info-item--text!= item.text
+            p.event__note По всем вопросам обращаться в администрацию к К. Михельсону
 
 
-            section.members.slider.js-slider-members.swiper
-                h2.members__title Участники турнира
-                .members__list.swiper-wrapper
-                    +member({
-                        className: 'members__item swiper-slide',
-                        name: 'Хозе-Рауль Капабланка',
-                    })
-                    +member({
-                        className: 'members__item swiper-slide',
-                        name: 'Эммануил Ласкер',
-                    })
-                    +member({
-                        className: 'members__item swiper-slide',
-                        name: 'Александр Алехин',
-                    })
-                    +member({
-                        className: 'members__item swiper-slide',
-                        name: 'Арон Нимцович',
-                    })
-                    +member({
-                        className: 'members__item swiper-slide',
-                        name: 'Рихард Рети',
-                    })
-                    +member({
-                        className: 'members__item swiper-slide',
-                        name: 'Остап Бендер',
-                        text: 'Гроссмейстер',
-                    })
-                .members__controls.slider__controls
-                  button.slider__control.slider__prev.swiper-button-prev
-                    +svg('arrow-left', 44, 44)
-                  .slider__counter.swiper-pagination
-                  button.slider__control.slider__next.swiper-button-next
-                    +svg('arrow-right', 44, 44)
+      section.stages
+        h2.stages__title Этапы преображения Васюков <span class='stages__title-note'>Будущие источники обогащения васюкинцев</span>
+        .stages__block
+          .stages__plane
+            picture
+              source(srcset='./img/plane--mobile.png 1x, ./img/plane--mobile@2x.png 2x' media='(max-width: 1279px)')
+              img(src='./img/plane.png' srcset='./img/plane@2x.png 2x' width=401 height=235 alt='самолет в Васюки')
+          .stages__wrapper.slider.swiper.js-slider-stages
+            .stages__list.swiper-wrapper
+              .stages__item.stages__item--double.swiper-slide
+                p.stages__text Строительство железнодорожной магистрали Москва-Васюки
+                p.stages__text Открытие фешенебельной гостиницы «Проходная пешка» и других небоскрёбов
+              .stages__item.stages__item--vertical.swiper-slide
+                p.stages__text Поднятие сельского хозяйства в радиусе на тысячу километров: производство овощей, фруктов, икры, шоколадных конфет
+              .stages__item.stages__item--double.swiper-slide
+                p.stages__text Строительство дворца для турнира
+                p.stages__text Размещение гаражей для гостевого <br> автотранспорта
+              .stages__item.swiper-slide
+                p.stages__text Постройка сверхмощной радиостанции для передачи всему миру сенсационных результатов
+              .stages__item.stages__item--horizontal.swiper-slide
+                p.stages__text Создание аэропорта «Большие Васюки» с регулярным отправлением почтовых самолётов и дирижаблей во все концы света, включая Лос-Анжелос и Мельбурн
+            .slider__controls
+              button.slider__control.slider__prev.swiper-button-prev
+                +svg('arrow-left', 44, 44)
+              .slider__pagination.swiper-pagination
+              button.slider__control.slider__next.swiper-button-next
+                +svg('arrow-right', 44, 44)
 
-            +marquee
-        footer.footer
-          p.footer__text Все персонажи, события и цитаты являются вымышленными и не принадлежат создателям сайта. С подробностями можно познакомиться в главе XXXIV романа Ильи Ильфа и Евгения Петрова «Двенадцать стульев».
 
-        script(src="js/main.js")
+      section.members.slider.js-slider-members.swiper
+        h2.members__title Участники турнира
+        .members__list.swiper-wrapper
+          +member({
+            className: 'members__item swiper-slide',
+            name: 'Хозе-Рауль Капабланка',
+          })
+          +member({
+            className: 'members__item swiper-slide',
+            name: 'Эммануил Ласкер',
+          })
+          +member({
+            className: 'members__item swiper-slide',
+            name: 'Александр Алехин',
+          })
+          +member({
+            className: 'members__item swiper-slide',
+            name: 'Арон Нимцович',
+          })
+          +member({
+            className: 'members__item swiper-slide',
+            name: 'Рихард Рети',
+          })
+          +member({
+            className: 'members__item swiper-slide',
+            name: 'Остап Бендер',
+            text: 'Гроссмейстер',
+          })
+        .members__controls.slider__controls
+          button.slider__control.slider__prev.swiper-button-prev
+            +svg('arrow-left', 44, 44)
+          .slider__counter.swiper-pagination
+          button.slider__control.slider__next.swiper-button-next
+            +svg('arrow-right', 44, 44)
+
+      +marquee
+    footer.footer
+      p.footer__text Все персонажи, события и цитаты являются вымышленными и не принадлежат создателям сайта. С подробностями можно познакомиться в главе XXXIV романа Ильи Ильфа и Евгения Петрова «Двенадцать стульев».
+
+    script(src="js/main.js")

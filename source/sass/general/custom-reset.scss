@@ -76,11 +76,11 @@ a[class] {
 
 *:focus {
   outline: none;
-  //   box-shadow: 0 0 4px 3px rgba($color-brand-blue, .5);
+  box-shadow: 0 0 4px 3px rgba($color-yellow, .8);
 
-  //   @include tablet {
-  //     box-shadow: none;
-  //   }
+  @include tablet {
+    box-shadow: none;
+  }
 }
 
 .layout.locked {

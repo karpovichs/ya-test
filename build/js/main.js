@@ -18,7 +18,7 @@ __webpack_require__.r(__webpack_exports__);
   var membersSlider = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.js-slider-members', {
     loop: true,
     autoplay: {
-      delay: 3000
+      delay: 4000
     },
     breakpoints: {
       320: {

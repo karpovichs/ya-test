@@ -34,9 +34,9 @@
   z-index: 1;
   position: absolute;
   left: calc(51vw);
-  width: 1625px;
   bottom: 9px;
   transform: translateX(-50%);
+  width: 1625px;
 
   @include tablet {
     width: 1200px;
@@ -45,8 +45,8 @@
   @include mobile {
     bottom: 18;
     left: 50vw;
-    width: 885px;
     transform: translateX(-66.5%);
+    width: 885px;
   }
 
   img {
@@ -67,8 +67,8 @@
 
   @include mobile {
     width: 100%;
-    padding: 0 20px;
     max-width: $mobile-max-wrapper;
+    padding: 0 20px;
   }
 }
 

@@ -87,8 +87,8 @@
   @include tablet {
     top: -128px;
     right: 50%;
-    transform: translateX(50%);
     bottom: auto;
+    transform: translateX(50%);
     width: 335px;
     height: auto;
   }
@@ -98,12 +98,11 @@
   @include tablet {
     position: relative;
     display: block;
+    flex-shrink: 0;
     width: 100%;
     height: auto;
-    flex-shrink: 0;
-    padding: 62px 20px 34px;
-
     margin-bottom: 28px;
+    padding: 62px 20px 34px;
     background-color: $color-beige;
 
     @include mobile {
@@ -165,12 +164,11 @@
   display: flex;
   align-items: top;
   justify-content: flex-start;
-  counter-increment: counter;
   width: 100%;
   padding: 20px;
   font-weight: 600;
-
   background-color: $color-beige;
+  counter-increment: counter;
 
   @include mobile {
     margin-bottom: 28px;

@@ -1,7 +1,7 @@
 .marquee {
+  overflow: hidden;
   display: flex;
   width: 100%;
-  overflow: hidden;
   padding: 18px 0;
   font-family: $font-merriweather;
   font-size: 22px;
@@ -21,9 +21,7 @@
   display: flex;
   justify-content: space-around;
   min-width: 100%;
-
-  animation: scroll 30s linear infinite;
-
+  animation: scroll 90s linear infinite;
 }
 
 .marquee__item {
@@ -40,7 +38,6 @@
     margin: 0 12px;
     border-radius: 50%;
     background-color: $color-white;
-    ;
   }
 }
 

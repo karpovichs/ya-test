@@ -6,7 +6,7 @@ export default () => {
   const membersSlider = new Swiper('.js-slider-members', {
       loop: true,
       autoplay: {
-        delay: 3000
+        delay: 4000
       },
       breakpoints: {
         320: {
