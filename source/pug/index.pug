@@ -4,26 +4,26 @@ include ./components/btn
 include ./components/member
 include ./components/svg
 
-- 
+-
     let event = [
         {
-            name: 'Место проведения:', 
+            name: 'Место проведения:',
             text: 'Клуб «Картонажник»'
         },
         {
-            name: 'Дата и время мероприятия:', 
+            name: 'Дата и время мероприятия:',
             text: '22 июня 1927 г. в 18:00'
         },
         {
-            name: 'Стоимость входных билетов:', 
+            name: 'Стоимость входных билетов:',
             text: '20 коп.'
         },
         {
-            name: 'Плата за игру:', 
+            name: 'Плата за игру:',
             text: '50 коп.'
         },
         {
-            name: 'Взнос на телеграммы:', 
+            name: 'Взнос на телеграммы:',
             text: '<s>100 руб.</s> 21 руб. 16 коп.'
         },
     ]
@@ -48,9 +48,9 @@ html(lang='ru')
                 .hero__wrap
                     img.hero__logo(width=245 height=36 src='./img/logo.svg' alt='клуб четырех коней')
                     .hero__text
-                        h2.hero__title 
-                            span.hero__title-item Превратите уездный город 
-                            span.hero__title-item.hero__title-item--center в столицу 
+                        h2.hero__title
+                            span.hero__title-item Превратите уездный город
+                            span.hero__title-item.hero__title-item--center в столицу
                             span.hero__title-item.hero__title-item--right земного шара
                         p.hero__subtext Оплатите взнос на телеграммы для организации Международного васюкинского турнира по шахматам
                         .hero__buttons
@@ -68,8 +68,8 @@ html(lang='ru')
 
             section.event
                 .event__block
-                    p.event__title 
-                        span Чтобы поддержать Международный васюкинский турнир 
+                    p.event__title
+                        span Чтобы поддержать Международный васюкинский турнир
                         img.event__players(src='./img/players.jpg' srcset="./img/players@2x.jpg 2x" width=394 height=250 alt='фото игроков в шахматы')
                         span посетите лекцию на тему: <b>«Плодотворная дебютная идея»</b>
                 .event__block
@@ -87,72 +87,69 @@ html(lang='ru')
             section.stages
                 h2.stages__title Этапы преображения Васюков <span class='stages__title-note'>Будущие источники обогащения васюкинцев</span>
                 .stages__block
-                    .stages__plane 
+                    .stages__plane
                         picture
                             source(srcset='./img/plane--mobile.png 1x, ./img/plane--mobile@2x.png' media='(max-width: 1279px)')
                             img(src='./img/plane.png' srcset='./img/plane@2x.png 2x' width=401 height=235 alt='самолет в Васюки')
-                    .stages__wrapper.slider.js-slider
-                        .stages__list.slider__wrap
-                            .stages__item.stages__item--double.slider__slide
+                    .stages__wrapper.slider.swiper.js-slider-stages
+                        .stages__list.swiper-wrapper
+                            .stages__item.stages__item--double.swiper-slide
                                 .stages__text Строительство железнодорожной магистрали Москва-Васюки
                                 .stages__text Открытие фешенебельной гостиницы «Проходная пешка» и других небоскрёбов
-                            .stages__item.stages__item--vertical.slider__slide
+                            .stages__item.stages__item--vertical.swiper-slide
                                 .stages__text Поднятие сельского хозяйства в радиусе на тысячу километров: производство овощей, фруктов, икры, шоколадных конфет
-                            .stages__item.stages__item--double.slider__slide
+                            .stages__item.stages__item--double.swiper-slide
                                 .stages__text Строительство дворца для турнира
                                 .stages__text Размещение гаражей для гостевого <br> автотранспорта
-                            .stages__item.slider__slide
+                            .stages__item.swiper-slide
                                 .stages__text Постройка сверхмощной радиостанции для передачи всему миру сенсационных результатов
-                            .stages__item.stages__item--horizontal.slider__slide
+                            .stages__item.stages__item--horizontal.swiper-slide
                                 .stages__text Создание аэропорта «Большие Васюки» с регулярным отправлением почтовых самолётов и дирижаблей во все концы света, включая Лос-Анжелос и Мельбурн
                         .slider__controls
-                            button.slider__control.slider__prev
+                            button.slider__control.slider__prev.swiper-button-prev
                                 +svg('arrow-left', 44, 44)
-                            .slider__pagination
-                            button.slider__control.slider__next 
+                            .slider__pagination.swiper-pagination
+                            button.slider__control.slider__next.swiper-button-next
                                 +svg('arrow-right', 44, 44)
 
-                    
-            section.members.slider.js-slider-members
+
+            section.members.slider.js-slider-members.swiper
                 h2.members__title Участники турнира
-                .members__list.slider__wrap
+                .members__list.swiper-wrapper
                     +member({
-                        className: 'members__item slider__slide',
+                        className: 'members__item swiper-slide',
                         name: 'Хозе-Рауль Капабланка',
                     })
                     +member({
-                        className: 'members__item slider__slide',
+                        className: 'members__item swiper-slide',
                         name: 'Эммануил Ласкер',
                     })
                     +member({
-                        className: 'members__item slider__slide',
+                        className: 'members__item swiper-slide',
                         name: 'Александр Алехин',
                     })
                     +member({
-                        className: 'members__item slider__slide',
+                        className: 'members__item swiper-slide',
                         name: 'Арон Нимцович',
                     })
                     +member({
-                        className: 'members__item slider__slide',
+                        className: 'members__item swiper-slide',
                         name: 'Рихард Рети',
                     })
                     +member({
-                        className: 'members__item slider__slide',
+                        className: 'members__item swiper-slide',
                         name: 'Остап Бендер',
                         text: 'Гроссмейстер',
                     })
                 .members__controls.slider__controls
-                    button.slider__control.slider__prev
-                        +svg('arrow-left', 44, 44)
-                    .slider__counter
-                        span.slider__current
-                        span  / 
-                        span.slider__total
-                    button.slider__control.slider__next
-                        +svg('arrow-right', 44, 44)
+                  button.slider__control.slider__prev.swiper-button-prev
+                    +svg('arrow-left', 44, 44)
+                  .slider__counter.swiper-pagination
+                  button.slider__control.slider__next.swiper-button-next
+                    +svg('arrow-right', 44, 44)
 
             +marquee
         footer.footer
-            p.footer__text Все персонажи, события и цитаты являются вымышленными и не принадлежат создателям сайта. С подробностями можно познакомиться в главе XXXIV романа Ильи Ильфа и Евгения Петрова «Двенадцать стульев».
+          p.footer__text Все персонажи, события и цитаты являются вымышленными и не принадлежат создателям сайта. С подробностями можно познакомиться в главе XXXIV романа Ильи Ильфа и Евгения Петрова «Двенадцать стульев».
 
         script(src="js/main.js")

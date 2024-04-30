@@ -1,107 +1,95 @@
 .slider {
-    @include transition(transform);
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-
-    &--start {
-        .slider__prev {
-            opacity: .2;
-            cursor: not-allowed;
-            pointer-events: none;
-        }
+  &.swiper-initialized {
+    .slider__controls {
+      display: flex;
     }
-
-    &--end {
-        .slider__next {
-            opacity: .2;
-            cursor: not-allowed;
-            pointer-events: none;
-        }
-    }
-
-    &--active {
-        .slider__controls {
-            display: flex;
-        }
-    }
-}
-
-.slider__wrap {
-    @include transition(transform);
-    position: relative;
-    display: flex;
-    flex-wrap: nowrap;
-    width: 100%;
+  }
 }
 
 .slider__controls {
-    display: none;
-    align-items: center;
-    justify-content: center;
-    gap: 16px;
+  display: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.slider .swiper-button-next,
+.slider .swiper-button-prev {
+  position: relative;
+  top: auto;
+  left: auto;
+  right: auto;
+  margin: 0;
 }
 
 .slider__control {
-    @include button-reset;
-    @include transition(background-color);
-    width: 44px;
-    height: 44px;
-    background-color: $color-text;
-    border-radius: 50%;
-    font-size: 0;
+  @include button-reset;
+  @include transition(background-color);
+  width: 44px;
+  height: 44px;
+  background-color: $color-text;
+  border-radius: 50%;
+  font-size: 0;
 
+  @include mobile {
+    width: 36px;
+    height: 36px;
+  }
+
+  &:hover {
+    background-color: $color-yellow;
+  }
+
+  svg {
     @include mobile {
-        width: 36px;
-        height: 36px;
+      width: 36px;
+      height: 36px;
     }
+  }
 
-    &:hover {
-        background-color: $color-yellow;
-    }
-
-    svg {
-        @include mobile {
-            width: 36px;
-            height: 36px;
-        }
-    }
+  &::after {
+    display: none
+  }
 }
 
 .slider__slide {
-    flex-shrink: 0;
+  @include transition(opacity);
+  flex-shrink: 0;
 }
 
-.slider__pagination {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    gap: 6px;
-    max-width: 200px;
+.slider .swiper-pagination {
+  position: relative;
+  top: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  max-width: 200px;
 
-}
-
-.slider__pagination-item {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background-color: $color-grey;
-
-    &--active {
-        background-color: $color-text;
-    }
-}
-
-.slider__counter {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 32px;
+  &.slider__counter {
+    flex-wrap: nowrap;
     gap: 2px;
+    width: 32px;
     color: rgba($color-text, .6);
+  }
 }
 
-.slider__current {
-    color: $color-text;
+.slider .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet,
+.slider .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  margin: 0;
+  border-radius: 50%;
+  background-color: $color-grey;
+  opacity: 1;
+
+  &-active {
+    background-color: $color-text;
+  }
+}
+
+.slider .swiper-pagination-current {
+  color: $color-text;
 }

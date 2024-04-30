@@ -1,54 +1,55 @@
 .marquee {
-    display: flex;
-    width: 100%;
-    overflow: hidden;
-    padding: 18px 0;
-    font-family: $font-merriweather;
-    font-size: 22px;
-    line-height: 1.1;
-    text-transform: uppercase;
-    color: $color-white;
-    background-color: $color-red;
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+  padding: 18px 0;
+  font-family: $font-merriweather;
+  font-size: 22px;
+  line-height: 1.1;
+  text-transform: uppercase;
+  color: $color-white;
+  background-color: $color-red;
 
-    @include mobile {
-        padding: 10px 0;
-        font-size: 16px;
-    }
+  @include mobile {
+    padding: 10px 0;
+    font-size: 16px;
+  }
 }
 
 .marquee__list {
-    flex-shrink: 0;
-    display: flex;
-    justify-content: space-around;
-    min-width: 100%;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: space-around;
+  min-width: 100%;
 
-    animation: scroll 30s linear infinite;
+  animation: scroll 30s linear infinite;
 
 }
 
 .marquee__item {
-    display: flex;
-    align-items: center;
-    margin-right: auto;
+  display: flex;
+  align-items: center;
+  margin-right: auto;
 
-    &::after {
-        content: "";
-        display: flex;
-        width: 6px;
-        height: 6px;
-        margin-left: auto;
-        margin: 0 12px;
-        border-radius: 50%;
-        background-color: $color-white;;
-    }
+  &::after {
+    content: "";
+    display: flex;
+    width: 6px;
+    height: 6px;
+    margin-left: auto;
+    margin: 0 12px;
+    border-radius: 50%;
+    background-color: $color-white;
+    ;
+  }
 }
 
 @keyframes scroll {
-    from {
-        transform: translateX(0);
-    }
+  from {
+    transform: translateX(0);
+  }
 
-    to {
-        transform: translateX(calc(-100% - 20px));
-    }
+  to {
+    transform: translateX(calc(-100% - 20px));
+  }
 }

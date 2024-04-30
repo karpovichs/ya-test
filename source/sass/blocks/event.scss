@@ -1,208 +1,208 @@
 .event {
-    margin: 107px 0 200px;
+  margin: 107px 0 200px;
 
-    @include mobile {
-        margin: 48px 0 120px;
-    }
+  @include mobile {
+    margin: 48px 0 120px;
+  }
 }
 
 .event__block {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: $desktop-wrapper;
-    margin: 0 auto 92px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: $desktop-wrapper;
+  margin: 0 auto 92px;
 
-    @include tablet {
-        width: $tablet-wrapper;
-        flex-direction: column;
-    }
+  @include tablet {
+    width: $tablet-wrapper;
+    flex-direction: column;
+  }
 
-    @include mobile {
-        width: 100%;
-        max-width: $mobile-max-wrapper;
-        margin-bottom: 34px;
-        padding: 0 20px;
-    }
+  @include mobile {
+    width: 100%;
+    max-width: $mobile-max-wrapper;
+    margin-bottom: 34px;
+    padding: 0 20px;
+  }
 }
 
 .event__block-column {
-    &--narrow {
-        width: 704px;
-        margin-left: auto;
+  &--narrow {
+    width: 704px;
+    margin-left: auto;
 
-        @include tablet {
-            width: 100%;
-        }
+    @include tablet {
+      width: 100%;
     }
+  }
 }
 
 .event__title {
-    width: 764px;
-    font-family: $font-merriweather;
-    font-weight: 400;
-    font-size: 36px;
-    line-height: 1.35;
-    text-transform: uppercase;
+  width: 764px;
+  font-family: $font-merriweather;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 1.35;
+  text-transform: uppercase;
 
-    @include tablet {
-        width: 100%;
-    }
+  @include tablet {
+    width: 100%;
+  }
 
-    b {
-        color: $color-red;
-        font-weight: 800;
-    }
+  b {
+    color: $color-red;
+    font-weight: 800;
+  }
 
-    @include mobile {
-        font-size: 28px;
-    }
+  @include mobile {
+    font-size: 28px;
+  }
 
-    @include small-mobile {
-        font-size: 24px;
-    }
+  @include small-mobile {
+    font-size: 24px;
+  }
 }
 
 .event__players {
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 394px;
-    border-radius: 50%;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 394px;
+  border-radius: 50%;
 
-    @include tablet {
-        position: relative;
-        margin: 24px auto;
-        transform: none;
-    }
+  @include tablet {
+    position: relative;
+    margin: 24px auto;
+    transform: none;
+  }
 }
 
 .event__collage {
-    position: absolute;
-    top: -26px;
-    left: -25px;
-    width: 526px;
+  position: absolute;
+  top: -26px;
+  left: -25px;
+  width: 526px;
 
-    @include tablet {
-        position: relative;
-        top: 0;
-        left: 0;
-        width: 112%;
-        max-width: 375px;
-        margin-bottom: 24px;
-    }
+  @include tablet {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 112%;
+    max-width: 375px;
+    margin-bottom: 24px;
+  }
 
-    img {
-        width: 100%;
-    }
+  img {
+    width: 100%;
+  }
 }
 
 .event__info {
-    display: flex;
-    border-bottom: 2px solid $color-grey;
+  display: flex;
+  border-bottom: 2px solid $color-grey;
+
+  @include mobile {
+    display: block;
+    margin-bottom: 15px;
+  }
+
+  &:first-of-type {
+    margin-top: 60px;
 
     @include mobile {
-        display: block;
-        margin-bottom: 15px;
+      margin-top: 44px;
     }
 
-    &:first-of-type {
-        margin-top: 60px;
+    .event__info-item {
+      padding-top: 0;
+    }
+  }
 
-        @include mobile {
-            margin-top: 44px;
-        }
+  &:last-of-type {
+    margin-bottom: 48px;
+    border-bottom: none;
 
-        .event__info-item {
-            padding-top: 0;
-        }
+    @include mobile {
+      margin-bottom: 40px;
     }
 
-    &:last-of-type {
-        margin-bottom: 48px;
-        border-bottom: none;
+    .event__info-item {
+      padding-bottom: 0;
 
-        @include mobile {
-            margin-bottom: 40px;
-        }
-
-        .event__info-item {
-            padding-bottom: 0;
-
-            &:last-of-type {
-                margin-bottom: 0;
-            }
-        }
+      &:last-of-type {
+        margin-bottom: 0;
+      }
     }
+  }
 }
 
 .event__info-item {
-    padding: 16px 0 15px;
+  padding: 16px 0 15px;
+
+  @include mobile {
+    display: inline-block;
+    padding: 0;
+  }
+
+  &--name {
+    position: relative;
+    width: 306px;
+    opacity: .7;
 
     @include mobile {
-        display: inline-block;
-        padding: 0;
+      width: auto;
+      margin-right: 12px;
+      margin-bottom: 12px;
     }
 
-    &--name {
-        position: relative;
-        width: 306px;
-        opacity: .7;
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: -1px;
+      bottom: 0;
+      width: 2px;
+      background-color: $color-grey;
 
-        @include mobile {
-            width: auto;
-            margin-right: 12px;
-            margin-bottom: 12px;
-        }
+      @include mobile {
+        display: none;
+      }
+    }
+  }
 
-        &::after {
-            content: "";
-            position: absolute;
-            top: 0;
-            right: -1px;
-            bottom: 0;
-            width: 2px;
-            background-color: $color-grey;
+  &--text {
+    margin-left: 16px;
+    font-weight: 800;
 
-            @include mobile {
-                display: none;
-            }
-        }
+    @include mobile {
+      margin-left: 0;
+      margin-bottom: 15px;
     }
 
-    &--text {
-        margin-left: 16px;
-        font-weight: 800;
+    s {
+      position: relative;
+      text-decoration: none;
 
-        @include mobile {
-            margin-left: 0;
-            margin-bottom: 15px;
-        }
-
-        s {
-            position: relative;
-            text-decoration: none;
-
-            &::after {
-                content: "";
-                position: absolute;
-                top: 50%;
-                left: -1px;
-                right: -1px;
-                height: 2px;
-                border-radius: 1px;
-                background-color: $color-red;
-            }
-        }
+      &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: -1px;
+        right: -1px;
+        height: 2px;
+        border-radius: 1px;
+        background-color: $color-red;
+      }
     }
+  }
 }
 
 .event__note {
-    color: $color-blue;
+  color: $color-blue;
 
-    @include mobile {
-        font-size: 18px;
-    }
+  @include mobile {
+    font-size: 18px;
+  }
 }

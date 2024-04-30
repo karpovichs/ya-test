@@ -1,36 +1,38 @@
 @mixin small-mobile {
-    @media (max-width: $mobile-small-max) {
-        @content;
-    }
+  @media (max-width: $mobile-small-max) {
+    @content;
+  }
 }
 
 @mixin mobile {
-    @media (max-width: $mobile-max) {
-      @content;
-    }
+  @media (max-width: $mobile-max) {
+    @content;
+  }
 }
 
 @mixin tablet {
-    @media (max-width: $tablet-max) {
-      @content;
-    }
+  @media (max-width: $tablet-max) {
+    @content;
+  }
 }
 
 @mixin retina {
-    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
-        @content;
-    }
+
+  @media (min-resolution: $retina-dpi),
+  (min-resolution: $retina-dppx) {
+    @content;
+  }
 }
 
 @mixin button-reset {
-    padding: 0;
-    border: none;
-    background: none;
-    cursor: pointer;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
 }
 
 @mixin transition($args...) {
-    transition-property: $args;
-    transition-duration: 0.15s;
-    transition-timing-function: linear;
+  transition-property: $args;
+  transition-duration: 0.15s;
+  transition-timing-function: linear;
 }

@@ -1,64 +1,55 @@
 .members {
-    position: relative;
-    width: $desktop-wrapper;
-    margin: 0 auto 140px;
+  position: relative;
+  width: $desktop-wrapper;
+  margin: 0 auto 140px;
 
-    @include tablet {
-        width: $tablet-wrapper;
-    }
+  @include tablet {
+    width: $tablet-wrapper;
+  }
 
-    @include mobile {
-        width: 100%;
-        margin-bottom: 100px;
-        padding: 0 20px;
-        max-width: $mobile-max-wrapper;
-    }
+  @include mobile {
+    width: 100%;
+    margin-bottom: 100px;
+    padding: 0 20px;
+    max-width: $mobile-max-wrapper;
+  }
 }
 
 .members__title {
-    margin-bottom: 60px;
-    font-size: 54px;
-    font-family: $font-merriweather;
-    text-transform: uppercase;
-    font-weight: 400;
+  margin-bottom: 60px;
+  font-size: 54px;
+  font-family: $font-merriweather;
+  text-transform: uppercase;
+  font-weight: 400;
 
-    @include mobile {
-        margin-bottom: 40px;
-        font-size: 36px;
-        line-height: 1.1;
-    }
+  @include mobile {
+    margin-bottom: 40px;
+    font-size: 36px;
+    line-height: 1.1;
+  }
 
-    @include small-mobile {
-        font-size: 32px;
-    }
+  @include small-mobile {
+    font-size: 32px;
+  }
 }
 
 .members__list {
-    @include tablet {
-        margin-bottom: 40px;
-    }
+  @include tablet {
+    margin-bottom: 40px;
+  }
 }
 
 .members__item {
-    width: 394px;
-    margin-right: 20px;
-
-    @include mobile {
-        margin-right: 0;
-    }
-
-    &:last-of-type {
-        margin-right: 0;
-    }
+  width: 394px;
 }
 
 .members__controls {
-    position: absolute;
-    right: 0;
-    top: 10px;
+  position: absolute;
+  right: 0;
+  top: 10px;
 
-    @include tablet {
-        position: relative;
-        top: 0;
-    }
+  @include tablet {
+    position: relative;
+    top: 0;
+  }
 }
