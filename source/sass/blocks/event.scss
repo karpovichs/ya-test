@@ -15,8 +15,8 @@
   margin: 0 auto 92px;
 
   @include tablet {
-    width: $tablet-wrapper;
     flex-direction: column;
+    width: $tablet-wrapper;
   }
 
   @include mobile {

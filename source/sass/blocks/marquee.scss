@@ -21,7 +21,7 @@
   display: flex;
   justify-content: space-around;
   min-width: 100%;
-  animation: scroll 90s linear infinite;
+  animation: scroll 60s linear infinite;
 }
 
 .marquee__item {
@@ -47,6 +47,6 @@
   }
 
   to {
-    transform: translateX(calc(-100% - 20px));
+    transform: translateX(calc(-50%));
   }
 }

@@ -26,11 +26,12 @@
 .slider__control {
   @include button-reset;
   @include transition(background-color);
+
   width: 44px;
   height: 44px;
+  font-size: 0;
   background-color: $color-text;
   border-radius: 50%;
-  font-size: 0;
 
   @include mobile {
     width: 36px;
